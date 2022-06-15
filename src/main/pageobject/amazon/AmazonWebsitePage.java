@@ -14,13 +14,13 @@ import org.openqa.selenium.WebDriver;
 import com.google.gson.Gson;
 
 public class AmazonWebsitePage extends WebDriverAction {
-	By searchBox = By.xpath("//input[@id=\"twotabsearchtextbox\"]");
-	By searchButton = By.xpath("//input[@id='nav-search-submit-button']");
+	private By searchBox = By.xpath("//input[@id=\"twotabsearchtextbox\"]");
+	private By searchButton = By.xpath("//input[@id='nav-search-submit-button']");
 	
-	String productLink = "//div[@class=\"s-main-slot s-result-list s-search-results sg-row\"]/div[@data-component-type=\"s-search-result\"]{0}//a[@class=\"a-link-normal s-underline-text s-underline-link-text s-link-style a-text-normal\"]";
-	String productName = "//div[@class=\"s-main-slot s-result-list s-search-results sg-row\"]/div[@data-component-type=\"s-search-result\"]{0}//span[@class=\"a-size-medium a-color-base a-text-normal\"]";
-	String stringProductPriceWhole = "//div[@class=\"s-main-slot s-result-list s-search-results sg-row\"]/div[@data-component-type=\"s-search-result\"]{0}//span[@class=\"a-price\"]//span[@class=\"a-price-whole\"]";
-	String stringProductPriceFraction = "//div[@class=\"s-main-slot s-result-list s-search-results sg-row\"]/div[@data-component-type=\"s-search-result\"]{0}//span[@class=\"a-price\"]//span[@class=\"a-price-fraction\"]";
+	private String productLink = "//div[@class=\"s-main-slot s-result-list s-search-results sg-row\"]/div[@data-component-type=\"s-search-result\"]{0}//a[@class=\"a-link-normal s-underline-text s-underline-link-text s-link-style a-text-normal\"]";
+	private String productName = "//div[@class=\"s-main-slot s-result-list s-search-results sg-row\"]/div[@data-component-type=\"s-search-result\"]{0}//span[@class=\"a-size-medium a-color-base a-text-normal\"]";
+	private String stringProductPriceWhole = "//div[@class=\"s-main-slot s-result-list s-search-results sg-row\"]/div[@data-component-type=\"s-search-result\"]{0}//span[@class=\"a-price\"]//span[@class=\"a-price-whole\"]";
+	private String stringProductPriceFraction = "//div[@class=\"s-main-slot s-result-list s-search-results sg-row\"]/div[@data-component-type=\"s-search-result\"]{0}//span[@class=\"a-price\"]//span[@class=\"a-price-fraction\"]";
 	public AmazonWebsitePage(WebDriver driver) {
 		super(driver);
 	}
@@ -77,14 +77,7 @@ public class AmazonWebsitePage extends WebDriverAction {
 		return ProductDataList;
     }
     
-    public String convertObjectToJson(ArrayList<ProductDataObject> object) {
-    	Gson gson = new Gson();
-    	String Json = gson.toJson(object);
-		return Json;
-    }
-    
     public void changeTab(String url) {
-    	openNewTab();
     	goTo(url);
     }
 }

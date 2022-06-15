@@ -11,7 +11,7 @@ import org.openqa.selenium.WebElement;
 public class WebDriverAction {
 	
     public WebDriver driver;
-    public WebElement Element;
+    public WebElement element;
     
     public WebDriverAction(WebDriver driver) {
         this.driver = driver;
@@ -47,10 +47,7 @@ public class WebDriverAction {
     public void clickElement(By locator) {
         findElement(locator).click();
     }
-    
-    public void openNewTab() {
-        //driver.switchTo().window(SafariDriver.WindowType.TAB);
-    }
+
     
     public void wait(int time) {
     	try {

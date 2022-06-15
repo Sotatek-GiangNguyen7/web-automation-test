@@ -14,13 +14,13 @@ import org.openqa.selenium.WebDriver;
 import com.google.gson.Gson;
 
 public class EbayWebsitePage extends WebDriverAction {
-	By searchBox = By.xpath("//input[@id=\"gh-ac\"]");
-	By searchButton = By.xpath("//input[@id=\"gh-btn\"]");
-	
-	By menu = By.xpath("//span//span[@class=\"fake-menu-button\"]");
-	By customize = By.xpath("//button[@aria-label=\"Customize\"]");
-	By convertPrice = By.xpath("//input[@id=\"cust_fcpd-1\"]");
-	By applyChange = By.xpath("//button[text()='Apply changes']");
+	private By searchBox = By.xpath("//input[@id=\"gh-ac\"]");
+	private By searchButton = By.xpath("//input[@id=\"gh-btn\"]");
+
+	private By menu = By.xpath("//span//span[@class=\"fake-menu-button\"]");
+	private By customize = By.xpath("//button[@aria-label=\"Customize\"]");
+	private By convertPrice = By.xpath("//input[@id=\"cust_fcpd-1\"]");
+	private By applyChange = By.xpath("//button[text()='Apply changes']");
 	
 	String stringProductLink = "//ul[@class=\"srp-results srp-list clearfix\"]//li[@data-view=\"mi:1686|iid:{0}\"]//a[@class=\"s-item__link\"]";
 	String stringProductName = "//ul[@class=\"srp-results srp-list clearfix\"]//li[@class=\"s-item s-item__pl-on-bottom\"]{0}//h3[@class=\"s-item__title\"]";
